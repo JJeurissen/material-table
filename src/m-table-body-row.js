@@ -76,6 +76,9 @@ export default class MTableBodyRow extends React.Component {
       return (
         <TableCell padding="none" key="key-detail-panel-column" style={{ width: 48 * this.props.detailPanel.length, textAlign: 'center' }}>
           {this.props.detailPanel.map((panel, index) => {
+            
+            if (this.props.data.item !== "Personnel" && this.props.data.item !== "Capital Equipment")
+                return null;
 
             if (typeof panel === "function") {
               panel = panel(this.props.data);
@@ -114,7 +117,7 @@ export default class MTableBodyRow extends React.Component {
             if (panel.tooltip) {
               iconButton = <Tooltip key={"key-detail-panel-" + index} title={panel.tooltip}>{iconButton}</Tooltip>;
             }
-
+    
             return iconButton;
           })}
         </TableCell>
