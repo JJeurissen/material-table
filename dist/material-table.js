@@ -189,6 +189,11 @@ function (_React$Component) {
 
       _this.props.onOrderChange && (_this$props3 = _this.props).onOrderChange.apply(_this$props3, arguments);
     });
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onToggleDetailPanelCustom", function () {
+      var _this$props3;
+
+      _this.props.onToggleDetailPanelCustom  && (_this$props3 = _this.props).onToggleDetailPanelCustom .apply(_this$props3, arguments);
+    });
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "isRemoteData", function () {
       return !Array.isArray(_this.props.data);
     });
@@ -631,9 +636,11 @@ function (_React$Component) {
             });
           },
           onToggleDetailPanel: function onToggleDetailPanel(path, render) {
-            _this5.dataManager.changeDetailPanelVisibility(path, render);
+            var item = _this5.dataManager.changeDetailPanelVisibility(path, render);
 
             _this5.setState(_this5.dataManager.getRenderState());
+
+            _this5.onToggleDetailPanelCustom(item[0], item[1]);
           },
           onGroupExpandChanged: function onGroupExpandChanged(path) {
             _this5.dataManager.changeGroupExpand(path);
@@ -1044,6 +1051,7 @@ MaterialTable.propTypes = {
   onChangePage: _propTypes["default"].func,
   onOrderChange: _propTypes["default"].func,
   onRowClick: _propTypes["default"].func,
+  onToggleDetailPanelCustom: _propTypes["default"].func,
   tableRef: _propTypes["default"].any
 };
 

@@ -356,6 +356,8 @@ function () {
       }
 
       this.lastDetailPanelRow = rowData;
+
+      return [rowData.tableData.showDetailPanel, rowData.item];
     }
   }, {
     key: "changeGroupExpand",
