@@ -35,7 +35,7 @@ class MTableFilterRow extends React.Component {
         MenuProps={MenuProps}
       >
         {
-          Object.keys(columnDef.lookup).map(key => (
+          Object.keys(columnDef.lookup).sort().map(key => (
             <MenuItem key={key} value={key}>
               <Checkbox checked={columnDef.tableData.filterValue ? columnDef.tableData.filterValue.indexOf(key.toString()) > -1 : false} />
               <ListItemText primary={columnDef.lookup[key]} />
