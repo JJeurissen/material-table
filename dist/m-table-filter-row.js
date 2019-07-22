@@ -85,7 +85,7 @@ function (_React$Component) {
           }).join(', ');
         },
         MenuProps: MenuProps
-      }, Object.keys(columnDef.lookup).map(function (key) {
+      }, Object.keys(columnDef.lookup).sort().map(function (key) {
         return React.createElement(_core.MenuItem, {
           key: key,
           value: key
