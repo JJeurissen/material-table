@@ -52,7 +52,7 @@ function (_React$Component) {
         style: {
           fontSize: 13
         }
-      }, Object.keys(this.props.columnDef.lookup).map(function (key) {
+      }, Object.keys(this.props.columnDef.lookup).sort().map(function (key) {
         return React.createElement(_core.MenuItem, {
           key: key,
           value: key

@@ -15,7 +15,7 @@ class FormField extends React.Component {
           fontSize: 13,
         }}
       >
-        {Object.keys(this.props.columnDef.lookup).map(key => (
+        {Object.keys(this.props.columnDef.lookup).sort().map(key => (
           <MenuItem key={key} value={key}>{this.props.columnDef.lookup[key]}</MenuItem>)
         )}
       </Select>
